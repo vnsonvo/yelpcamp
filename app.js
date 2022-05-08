@@ -2,9 +2,6 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
-// console.log(process.env.SECRET);
-// console.log(process.env.API_KEY);
-
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -72,7 +69,7 @@ const sessionConfig = {
   saveUninitialized: true,
   cookie: {
     httpOnly: true,
-    secure: true,
+    // secure: true,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
@@ -124,7 +121,7 @@ app.use((err, req, res, next) => {
   res.status(status).render("error", { err });
 });
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Connection is running on Port ${port}`);
