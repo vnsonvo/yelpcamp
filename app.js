@@ -56,7 +56,7 @@ const secret = process.env.SECRET || "thisshouldbeabettersecret!";
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
-  secret: secret,
+  secret,
   touchAfter: 24 * 3600,
 });
 
@@ -67,7 +67,7 @@ store.on("error", function (e) {
 const sessionConfig = {
   store,
   name: "session",
-  secret: secret,
+  secret,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -124,7 +124,7 @@ app.use((err, req, res, next) => {
   res.status(status).render("error", { err });
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 app.listen(port, () => {
   console.log(`Connection is running on Port ${port}`);
