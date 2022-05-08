@@ -2,6 +2,8 @@
 
 [LIVE DEMO](https://afternoon-brushlands-03058.herokuapp.com/)
 
+This is one of the project in the journey to becoming a Web Developer.
+
 This project was part of Colt Steele's course.
 
 This project was created using Node.js, Express, MongoDB, and few other packages.
